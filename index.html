@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TrackFlow | Rutas Que Respiran</title>
+    <meta
+      name="description"
+      content="TrackFlow diseña rutas logisticas con precision artesanal: envios express, cobertura internacional y operaciones B2B con seguimiento humano."
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              parchment: "#f2f7fb",
+              mist: "#edf5fa",
+              pine: "#001d3d",
+              bark: "#e8640c",
+              clay: "#e8640c",
+              ink: "#1f2a37"
+            },
+            fontFamily: {
+              display: ["Oswald", "sans-serif"],
+              serif: ["Cormorant Garamond", "serif"],
+              body: ["Manrope", "sans-serif"]
+            }
+          }
+        }
+      };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        color-scheme: light;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Manrope", sans-serif;
+        background-color: #f2f7fb;
+        color: #1f2a37;
+      }
+
+      .paper-grain {
+        background-image: radial-gradient(rgba(0, 29, 61, 0.06) 0.4px, transparent 0.4px);
+        background-size: 3px 3px;
+        opacity: 0.35;
+      }
+
+      .hero-canvas {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-canvas::after {
+        content: "";
+        position: absolute;
+        inset: auto 0 0;
+        height: 90px;
+        background: linear-gradient(180deg, transparent 0%, #f2f7fb 92%);
+      }
+
+      .paint-edge {
+        position: relative;
+      }
+
+      .paint-edge::before {
+        content: "";
+        position: absolute;
+        inset: -10px;
+        border: 1px solid rgba(0, 29, 61, 0.26);
+        border-radius: 30px;
+        pointer-events: none;
+      }
+
+      .reveal {
+        animation: revealUp 0.9s ease both;
+      }
+
+      .reveal-delay {
+        animation: revealUp 0.9s ease 0.2s both;
+      }
+
+      .opinion-slide {
+        transition: opacity 0.8s ease;
+      }
+
+      @keyframes revealUp {
+        from {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "TrackFlow",
+        "url": "https://trackflow.example",
+        "description": "Empresa de transporte y logistica de ultima milla con enfoque humano y eficiente.",
+        "areaServed": "Global",
+        "knowsAbout": [
+          "Envio express",
+          "Envio internacional",
+          "Logistica para empresas",
+          "Gestion de flotas"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "availableLanguage": ["es"]
+        }
+      }
+    </script>
+  </head>
+
+  <body class="antialiased">
+    <div class="paper-grain pointer-events-none fixed inset-0 z-0" aria-hidden="true"></div>
+
+    <header id="inicio" class="relative z-10 px-4 pb-14 pt-5 sm:px-6 lg:px-10" role="banner">
+      <nav
+        class="mx-auto flex w-full max-w-6xl items-center justify-between rounded-full border border-pine/20 bg-mist/90 px-5 py-3 backdrop-blur-sm"
+        aria-label="Navegacion principal"
+      >
+        <a href="#inicio" class="font-display text-xl tracking-wide text-pine" aria-label="Ir al inicio">TrackFlow</a>
+
+        <ul class="hidden items-center gap-6 text-sm text-ink/80 md:flex">
+          <li><a href="#servicios" class="transition hover:text-pine">Servicios</a></li>
+          <li><a href="#rutas" class="transition hover:text-pine">Rutas</a></li>
+          <li><a href="#diferencial" class="transition hover:text-pine">Por que elegirnos</a></li>
+          <li><a href="#opiniones" class="transition hover:text-pine">Opiniones</a></li>
+          <li><a href="#contacto" class="transition hover:text-pine">Contacto</a></li>
+        </ul>
+
+        <a
+          href="#contacto"
+          class="rounded-full border border-pine/30 bg-pine px-4 py-2 text-sm font-medium text-mist transition hover:bg-pine/90"
+          aria-label="Solicitar ruta"
+        >
+          Solicitar ruta
+        </a>
+      </nav>
+
+      <section class="mx-auto mt-6 w-full max-w-6xl" aria-labelledby="hero-title">
+        <article class="hero-canvas paint-edge rounded-[34px] bg-mist">
+          <img
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2200&q=80"
+            alt="Paisaje montanoso y ruta abierta como metafora de trayectos bien trazados"
+            class="h-[54vh] min-h-[380px] w-full object-cover"
+          />
+
+          <div class="absolute inset-0 bg-gradient-to-b from-black/35 via-black/10 to-transparent"></div>
+
+          <div class="absolute inset-0 flex items-center px-6 sm:px-10 lg:px-14">
+            <div class="max-w-3xl text-white reveal">
+              <p class="inline-block rounded-full border border-white/40 bg-[#001d3d]/72 px-4 py-2 text-xs uppercase tracking-[0.3em]">
+                Logistica de ultima milla con alma
+              </p>
+              <h1 id="hero-title" class="mt-6 font-display text-5xl leading-[0.95] tracking-wide sm:text-6xl lg:text-7xl">
+                Rutas precisas.
+                <span class="block font-serif text-4xl font-semibold italic text-mist sm:text-5xl">Entregas que respiran.</span>
+              </h1>
+              <p class="mt-6 max-w-2xl rounded-full border border-white/35 bg-[#001d3d]/72 px-5 py-3 text-base text-mist/95 sm:text-lg">
+                Cada trayecto se diseña para reducir friccion, mejorar tiempos y cuidar cada paquete como si fuera propio.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="reveal-delay relative -mt-12 rounded-[30px] border border-pine/20 bg-mist px-5 py-6 shadow-[0_20px_60px_rgba(63,81,68,0.12)] sm:px-8 lg:px-10">
+          <h2 class="font-display text-2xl tracking-wide text-pine">Seleccion de ruta</h2>
+          <div class="mt-5 grid gap-3 md:grid-cols-4">
+            <label class="space-y-2 text-sm">
+              <span class="text-ink/70">Origen</span>
+              <select class="w-full rounded-full border border-pine/20 bg-white px-4 py-2.5 outline-none transition focus:border-pine">
+                <option>Barcelona</option>
+                <option>Madrid</option>
+                <option>Valencia</option>
+              </select>
+            </label>
+            <label class="space-y-2 text-sm">
+              <span class="text-ink/70">Destino</span>
+              <select class="w-full rounded-full border border-pine/20 bg-white px-4 py-2.5 outline-none transition focus:border-pine">
+                <option>Paris</option>
+                <option>Lisboa</option>
+                <option>Berlin</option>
+              </select>
+            </label>
+            <label class="space-y-2 text-sm">
+              <span class="text-ink/70">Urgencia</span>
+              <select class="w-full rounded-full border border-pine/20 bg-white px-4 py-2.5 outline-none transition focus:border-pine">
+                <option>Express</option>
+                <option>Programada</option>
+                <option>Premium</option>
+              </select>
+            </label>
+            <button class="mt-7 rounded-full border border-clay/30 bg-clay px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-clay/90 md:mt-auto">
+              Calcular
+            </button>
+          </div>
+        </article>
+      </section>
+    </header>
+
+    <main class="relative z-10">
+      <section id="servicios" class="mx-auto w-full max-w-6xl px-4 py-24 sm:px-6 lg:px-10" aria-labelledby="services-title">
+        <div class="mb-12 max-w-3xl">
+          <p class="text-sm uppercase tracking-[0.22em] text-bark">Servicios</p>
+          <h2 id="services-title" class="mt-3 font-display text-4xl tracking-wide text-ink sm:text-5xl">Soluciones limpias para operaciones complejas</h2>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-3">
+          <article class="rounded-[28px] border border-pine/15 bg-mist p-6">
+            <img
+              src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f?auto=format&fit=crop&w=1200&q=80"
+              alt="Mensajeria urbana con bicicleta"
+              class="h-56 w-full rounded-2xl object-cover"
+              loading="lazy"
+            />
+            <h3 class="mt-6 font-display text-2xl text-pine">Envio express</h3>
+            <p class="mt-3 text-ink/75">Entrega inmediata para paquetes prioritarios con ventanas horarias estrechas y trazabilidad continua.</p>
+          </article>
+
+          <article class="rounded-[28px] border border-pine/15 bg-mist p-6">
+            <img
+              src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=1200&q=80"
+              alt="Avion de carga sobre paisaje"
+              class="h-56 w-full rounded-2xl object-cover"
+              loading="lazy"
+            />
+            <h3 class="mt-6 font-display text-2xl text-pine">Cobertura internacional</h3>
+            <p class="mt-3 text-ink/75">Rutas conectadas en 145 paises con gestion documental simplificada y soporte especializado.</p>
+          </article>
+
+          <article class="rounded-[28px] border border-pine/15 bg-mist p-6">
+            <img
+              src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1200&q=80"
+              alt="Equipo logistico en almacen moderno"
+              class="h-56 w-full rounded-2xl object-cover"
+              loading="lazy"
+            />
+            <h3 class="mt-6 font-display text-2xl text-pine">Logistica para empresas</h3>
+            <p class="mt-3 text-ink/75">Planificacion de volumen, rutas dinamicas y panel de control para tomar decisiones con calma.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="rutas" class="bg-mist/70 py-24" aria-labelledby="routes-title">
+        <div class="mx-auto grid w-full max-w-6xl gap-12 px-4 sm:px-6 lg:px-10">
+          <div class="max-w-3xl">
+            <p class="text-sm uppercase tracking-[0.22em] text-bark">Rutas recomendadas</p>
+            <h2 id="routes-title" class="mt-3 font-display text-4xl tracking-wide text-ink sm:text-5xl">Trayectos pensados para crecer sin fricciones</h2>
+          </div>
+
+          <article class="grid gap-7 rounded-[30px] border border-pine/15 bg-white/70 p-6 sm:p-8 lg:grid-cols-2 lg:items-center">
+            <img
+              src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1400&q=80"
+              alt="Camion circulando junto a montanas"
+              class="h-72 w-full rounded-2xl object-cover"
+              loading="lazy"
+            />
+            <div>
+              <h3 class="font-display text-3xl text-pine">Corredor Mediterraneo</h3>
+              <p class="mt-3 text-ink/75">Frecuencia diaria entre Barcelona, Valencia y Marsella. Ideal para ecommerce con ciclos de reposicion cortos.</p>
+              <a href="#contacto" class="mt-6 inline-block font-semibold uppercase tracking-[0.2em] text-clay">Ver detalle</a>
+            </div>
+          </article>
+
+          <article class="grid gap-7 rounded-[30px] border border-pine/15 bg-white/70 p-6 sm:p-8 lg:grid-cols-2 lg:items-center">
+            <img
+              src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1400&q=80"
+              alt="Equipo coordinando una entrega de paqueteria"
+              class="order-1 h-72 w-full rounded-2xl object-cover lg:order-2"
+              loading="lazy"
+            />
+            <div class="order-2 lg:order-1">
+              <h3 class="font-display text-3xl text-pine">Anillo Iberico Premium</h3>
+              <p class="mt-3 text-ink/75">Cobertura en menos de 24h para Madrid, Zaragoza, Bilbao y Porto, con prioridad para entregas de alto valor.</p>
+              <a href="#contacto" class="mt-6 inline-block font-semibold uppercase tracking-[0.2em] text-clay">Ver detalle</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="diferencial" class="mx-auto w-full max-w-6xl px-4 py-24 sm:px-6 lg:px-10" aria-labelledby="why-title">
+        <div class="max-w-3xl">
+          <p class="text-sm uppercase tracking-[0.22em] text-bark">Por que elegirnos</p>
+          <h2 id="why-title" class="mt-3 font-display text-4xl tracking-wide text-ink sm:text-5xl">Formato vertical, claro y sin ruido</h2>
+        </div>
+
+        <div class="mt-12 grid gap-8 md:grid-cols-3">
+          <article class="rounded-[28px] border border-pine/15 bg-mist p-6">
+            <img
+              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80"
+              alt="Analisis de costes sobre mesa de trabajo"
+              class="h-52 w-full rounded-2xl object-cover"
+              loading="lazy"
+            />
+            <h3 class="mt-5 font-display text-2xl text-pine">Precio legible</h3>
+            <p class="mt-2 text-ink/75">Tarifas transparentes, sin letra pequena y con escenarios de coste por volumen.</p>
+          </article>
+
+          <article class="rounded-[28px] border border-pine/15 bg-mist p-6">
+            <img
+              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80"
+              alt="Control de calidad en centro logistico"
+              class="h-52 w-full rounded-2xl object-cover"
+              loading="lazy"
+            />
+            <h3 class="mt-5 font-display text-2xl text-pine">Fiabilidad operativa</h3>
+            <p class="mt-2 text-ink/75">Protocolos de control y seguimiento para mantener puntualidad constante durante todo el ano.</p>
+          </article>
+
+          <article class="rounded-[28px] border border-pine/15 bg-mist p-6">
+            <img
+              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80"
+              alt="Atencion personalizada en oficina"
+              class="h-52 w-full rounded-2xl object-cover"
+              loading="lazy"
+            />
+            <h3 class="mt-5 font-display text-2xl text-pine">Acompanamiento premium</h3>
+            <p class="mt-2 text-ink/75">Un equipo asignado para incidencias, picos de demanda y ventanas criticas de entrega.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="opiniones" class="bg-clay py-24 text-mist" aria-labelledby="opinions-title">
+        <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-10">
+          <p class="text-sm uppercase tracking-[0.22em] text-mist/80">Opiniones de clientes</p>
+          <h2 id="opinions-title" class="mt-3 font-display text-4xl tracking-wide sm:text-5xl">Confianza que se construye ruta a ruta</h2>
+
+          <div class="relative mt-10 min-h-[21rem] rounded-[30px] border border-mist/25 bg-[#b35a16] p-6 sm:p-10">
+            <article class="opinion-slide absolute inset-0 p-6 sm:p-10" data-opinion-slide="0">
+              <img
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80"
+                alt="Retrato de clienta"
+                class="h-16 w-16 rounded-full border border-mist/40 object-cover"
+                loading="lazy"
+              />
+              <p class="mt-6 max-w-3xl font-serif text-3xl italic leading-tight">"Pasamos de sufrir retrasos semanales a tener entregas predecibles. El cambio fue radical."</p>
+              <p class="mt-5 text-sm uppercase tracking-[0.2em] text-mist/80">Marta S. | Ecommerce de hogar</p>
+            </article>
+
+            <article class="opinion-slide absolute inset-0 p-6 opacity-0 sm:p-10" data-opinion-slide="1">
+              <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80"
+                alt="Retrato de cliente"
+                class="h-16 w-16 rounded-full border border-mist/40 object-cover"
+                loading="lazy"
+              />
+              <p class="mt-6 max-w-3xl font-serif text-3xl italic leading-tight">"La ventana de entrega premium nos permitio cerrar contratos que antes perdiamos por tiempos."</p>
+              <p class="mt-5 text-sm uppercase tracking-[0.2em] text-mist/80">Jorge L. | Consultoria tecnica</p>
+            </article>
+
+            <article class="opinion-slide absolute inset-0 p-6 opacity-0 sm:p-10" data-opinion-slide="2">
+              <img
+                src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=300&q=80"
+                alt="Retrato de clienta particular"
+                class="h-16 w-16 rounded-full border border-mist/40 object-cover"
+                loading="lazy"
+              />
+              <p class="mt-6 max-w-3xl font-serif text-3xl italic leading-tight">"Nos encanto la claridad visual del seguimiento y la tranquilidad de hablar con personas reales."</p>
+              <p class="mt-5 text-sm uppercase tracking-[0.2em] text-mist/80">Elena R. | Cliente particular</p>
+            </article>
+
+            <div class="absolute bottom-5 right-6 flex gap-2" aria-label="Indicador de galeria">
+              <span class="h-2.5 w-2.5 rounded-full bg-mist/90" data-opinion-dot="0"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-mist/35" data-opinion-dot="1"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-mist/35" data-opinion-dot="2"></span>
+            </div>
+          </div>
+
+          <p class="mt-5 text-sm uppercase tracking-[0.18em] text-mist/75">Cambio automatico cada 20 segundos</p>
+        </div>
+      </section>
+
+      <section id="contacto" class="mx-auto w-full max-w-6xl px-4 py-24 sm:px-6 lg:px-10" aria-labelledby="contact-title">
+        <div class="grid gap-8 rounded-[32px] border border-pine/20 bg-mist p-6 sm:p-10 lg:grid-cols-[1.25fr_1fr]">
+          <article>
+            <p class="text-sm uppercase tracking-[0.22em] text-bark">Contacto</p>
+            <h2 id="contact-title" class="mt-3 font-display text-4xl tracking-wide text-ink sm:text-5xl">Listos para dibujar tu proxima ruta</h2>
+            <p class="mt-5 max-w-2xl text-ink/75">
+              Cuentanos tus volumenes, destinos y urgencias. En menos de 24 horas proponemos un plan de distribucion realista.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a
+                href="mailto:hola@trackflow.es"
+                class="rounded-full bg-pine px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-mist transition hover:bg-pine/90"
+              >
+                Escribir ahora
+              </a>
+              <a
+                href="tel:+34900111222"
+                class="rounded-full border border-pine/30 px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-pine transition hover:bg-pine/8"
+              >
+                Llamar
+              </a>
+            </div>
+          </article>
+
+          <article class="rounded-[24px] border border-pine/20 bg-white/70 p-6">
+            <h3 class="font-display text-2xl text-pine">TrackFlow en cifras</h3>
+            <ul class="mt-5 space-y-3 text-ink/80">
+              <li class="flex items-center justify-between border-b border-pine/10 pb-3"><span>Entregas anuales</span><strong>+1.2M</strong></li>
+              <li class="flex items-center justify-between border-b border-pine/10 pb-3"><span>Clientes activos</span><strong>50.000</strong></li>
+              <li class="flex items-center justify-between border-b border-pine/10 pb-3"><span>Paises conectados</span><strong>145</strong></li>
+              <li class="flex items-center justify-between"><span>Puntualidad</span><strong>99.8%</strong></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="relative z-10 border-t border-pine/15 bg-mist/80" role="contentinfo">
+      <div class="mx-auto flex w-full max-w-6xl flex-col gap-3 px-4 py-7 text-sm text-ink/75 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-10">
+        <p>© 2026 TrackFlow. Logistica de ultima milla con criterio humano.</p>
+        <p>
+          Contacto:
+          <a href="mailto:hola@trackflow.es" class="text-pine underline-offset-2 hover:underline">hola@trackflow.es</a>
+          · +34 900 111 222
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const opinionSlides = document.querySelectorAll("[data-opinion-slide]");
+      const opinionDots = document.querySelectorAll("[data-opinion-dot]");
+      let activeOpinion = 0;
+
+      function setOpinion(index) {
+        opinionSlides.forEach((slide, i) => {
+          slide.classList.toggle("opacity-0", i !== index);
+        });
+
+        opinionDots.forEach((dot, i) => {
+          dot.classList.toggle("bg-mist/90", i === index);
+          dot.classList.toggle("bg-mist/35", i !== index);
+        });
+      }
+
+      if (opinionSlides.length > 1) {
+        setInterval(() => {
+          activeOpinion = (activeOpinion + 1) % opinionSlides.length;
+          setOpinion(activeOpinion);
+        }, 20000);
+      }
+    </script>
+  </body>
+</html>
