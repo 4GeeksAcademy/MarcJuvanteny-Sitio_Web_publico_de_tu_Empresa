@@ -105,8 +105,6 @@ Tipografía:
 
 Estilo visual:
 - Flat design. Sin gradientes decorativos. Sin sombras superfluas.
-- Líneas limpias y geométricas. Espacio blanco generoso.
-- Iconografía de trazo fino (1.5–2px stroke).
 - Fotografía documental y real. Sin stock genérico.
 
 Elementos permitidos: líneas de trayecto, nodos de ruta, formas geométricas, datos en tiempo real, mapas esquemáticos.
@@ -149,7 +147,7 @@ No solo movemos paquetes, movemos confianza.
 
 ---
 
-## 5. Experiencia de Usuario
+## 5. Experiencia de Usuario- en galeria.
 ### **Nuestros clientes hablan por nosotros**
 
 > "Increíble la rapidez. Pensé que mi envío internacional tardaría semanas, pero llegó en tres días y en perfecto estado. ¡Repetiré seguro!"
