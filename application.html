@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrackFlow — Calcula tu presupuesto</title>
+<meta name="description" content="Formulario de aplicacion para calcular presupuesto de envios TrackFlow.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: '#003049',
+          orange: '#e8640c',
+          sky: '#D1E8F0'
+        },
+        fontFamily: {
+          display: ['Space Grotesk', 'sans-serif'],
+          body: ['DM Sans', 'sans-serif']
+        }
+      }
+    }
+  };
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "TrackFlow",
+  "email": "soporte@trackflow.com",
+  "telephone": "+34 900 555 123",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Madrid",
+    "addressCountry": "ES"
+  }
+}
+</script>
+</head>
+<body class="bg-navy text-white font-body min-h-screen">
+  <header class="border-b border-sky/20 bg-navy/95 backdrop-blur" role="banner">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-4">
+      <a href="index.html" class="inline-flex items-center gap-3" aria-label="Volver al inicio de TrackFlow">
+        <span class="w-9 h-9 rounded-md overflow-hidden border border-white/20 bg-gray-300">
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="w-full h-full" aria-hidden="true">
+            <rect x="0" y="0" width="48" height="48" fill="#d7dbe1"/>
+            <path d="M6 10H42V22H30V40H18V24L29 16H6Z" fill="#000b2a"/>
+            <path d="M18 10H30L24 16L18 22Z" fill="#ffffff"/>
+          </svg>
+        </span>
+        <span class="font-display text-xl tracking-[-0.03em]">Track<span class="text-orange">Flow</span></span>
+      </a>
+      <a href="index.html" class="text-sm text-sky hover:text-white">Volver a la landing</a>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <section class="mb-8 sm:mb-10" aria-label="Cabecera del formulario">
+      <p class="text-orange uppercase tracking-[0.12em] text-xs font-semibold">Formulario de aplicacion</p>
+      <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl tracking-[-0.03em] leading-tight mt-3">Calcula tu presupuesto ahora</h1>
+      <p class="text-sky/90 mt-4 max-w-3xl leading-7">Completa esta encuesta y te enviaremos una propuesta personalizada. Campos marcados con * son obligatorios.</p>
+    </section>
+
+    <section class="rounded-2xl border border-sky/20 bg-white/5 p-5 sm:p-8" aria-label="Formulario de presupuesto">
+      <form id="quoteForm" class="space-y-8" novalidate aria-describedby="formStatus">
+        <fieldset class="space-y-4">
+          <legend class="font-display text-2xl tracking-[-0.02em]">Datos de contacto</legend>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="fullName" class="block text-sm font-medium mb-2">Nombre completo *</label>
+              <input id="fullName" name="fullName" type="text" required autocomplete="name" class="w-full rounded-xl border border-sky/30 bg-navy/70 px-4 py-3 outline-none focus:border-orange focus:ring-2 focus:ring-orange/30" aria-describedby="error-fullName">
+              <p id="error-fullName" class="mt-2 text-sm text-red-300" role="alert" aria-live="polite"></p>
+            </div>
+            <div>
+              <label for="company" class="block text-sm font-medium mb-2">Empresa</label>
+              <input id="company" name="company" type="text" autocomplete="organization" class="w-full rounded-xl border border-sky/30 bg-navy/70 px-4 py-3 outline-none focus:border-orange focus:ring-2 focus:ring-orange/30" aria-describedby="error-company">
+              <p id="error-company" class="mt-2 text-sm text-red-300" role="alert" aria-live="polite"></p>
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium mb-2">Email *</label>
+              <input id="email" name="email" type="email" required autocomplete="email" class="w-full rounded-xl border border-sky/30 bg-navy/70 px-4 py-3 outline-none focus:border-orange focus:ring-2 focus:ring-orange/30" aria-describedby="error-email">
+              <p id="error-email" class="mt-2 text-sm text-red-300" role="alert" aria-live="polite"></p>
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-medium mb-2">Telefono *</label>
+              <input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="+34 600 123 456" class="w-full rounded-xl border border-sky/30 bg-navy/70 px-4 py-3 outline-none focus:border-orange focus:ring-2 focus:ring-orange/30" aria-describedby="error-phone">
+              <p id="error-phone" class="mt-2 text-sm text-red-300" role="alert" aria-live="polite"></p>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="space-y-4">
+          <legend class="font-display text-2xl tracking-[-0.02em]">Detalles del envio</legend>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div>
+              <label for="shipmentType" class="block text-sm font-medium mb-2">Tipo de servicio *</label>
+              <select id="shipmentType" name="shipmentType" required class="w-full rounded-xl border border-sky/30 bg-navy/70 px-4 py-3 outline-none focus:border-orange focus:ring-2 focus:ring-orange/30" aria-describedby="error-shipmentType">
+                <option value="">Selecciona una opcion</option>
+                <option value="express">Envio express</option>
+                <option value="international">Envio internacional</option>
+                <option value="business">Logistica para empresas</option>
+              </select>
+              <p id="error-shipmentType" class="mt-2 text-sm text-red-300" role="alert" aria-live="polite"></p>
+            </div>
+            <div>
+              <label for="origin" class="block text-sm font-medium mb-2">Origen *</label>
+              <input id="origin" name="origin" type="text" required placeholder="Ciudad o codigo postal" class="w-full rounded-xl border border-sky/30 bg-navy/70 px-4 py-3 outline-none focus:border-orange focus:ring-2 focus:ring-orange/30" aria-describedby="error-origin">
+              <p id="error-origin" class="mt-2 text-sm text-red-300" role="alert" aria-live="polite"></p>
+            </div>
+            <div>
+              <label for="destination" class="block text-sm font-medium mb-2">Destino *</label>
+              <input id="destination" name="destination" type="text" required placeholder="Ciudad o codigo postal" class="w-full rounded-xl border border-sky/30 bg-navy/70 px-4 py-3 outline-none focus:border-orange focus:ring-2 focus:ring-orange/30" aria-describedby="error-destination">
+              <p id="error-destination" class="mt-2 text-sm text-red-300" role="alert" aria-live="polite"></p>
+            </div>
+            <div>
+              <label for="pickupDate" class="block text-sm font-medium mb-2">Fecha de recogida *</label>
+              <input id="pickupDate" name="pickupDate" type="date" required class="w-full rounded-xl border border-sky/30 bg-navy/70 px-4 py-3 outline-none focus:border-orange focus:ring-2 focus:ring-orange/30" aria-describedby="error-pickupDate">
+              <p id="error-pickupDate" class="mt-2 text-sm text-red-300" role="alert" aria-live="polite"></p>
+            </div>
+            <div>
+              <label for="weight" class="block text-sm font-medium mb-2">Peso total (kg) *</label>
+              <input id="weight" name="weight" type="number" min="0.1" step="0.1" required class="w-full rounded-xl border border-sky/30 bg-navy/70 px-4 py-3 outline-none focus:border-orange focus:ring-2 focus:ring-orange/30" aria-describedby="error-weight">
+              <p id="error-weight" class="mt-2 text-sm text-red-300" role="alert" aria-live="polite"></p>
+            </div>
+            <div>
+              <label for="packages" class="block text-sm font-medium mb-2">Numero de paquetes *</label>
+              <input id="packages" name="packages" type="number" min="1" step="1" required class="w-full rounded-xl border border-sky/30 bg-navy/70 px-4 py-3 outline-none focus:border-orange focus:ring-2 focus:ring-orange/30" aria-describedby="error-packages">
+              <p id="error-packages" class="mt-2 text-sm text-red-300" role="alert" aria-live="polite"></p>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="space-y-4">
+          <legend class="font-display text-2xl tracking-[-0.02em]">Opciones adicionales</legend>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="fragile" class="block text-sm font-medium mb-2">Mercancia fragil *</label>
+              <select id="fragile" name="fragile" required class="w-full rounded-xl border border-sky/30 bg-navy/70 px-4 py-3 outline-none focus:border-orange focus:ring-2 focus:ring-orange/30" aria-describedby="error-fragile">
+                <option value="">Selecciona una opcion</option>
+                <option value="no">No</option>
+                <option value="si">Si</option>
+              </select>
+              <p id="error-fragile" class="mt-2 text-sm text-red-300" role="alert" aria-live="polite"></p>
+            </div>
+            <div>
+              <label for="insurance" class="block text-sm font-medium mb-2">Seguro adicional *</label>
+              <select id="insurance" name="insurance" required class="w-full rounded-xl border border-sky/30 bg-navy/70 px-4 py-3 outline-none focus:border-orange focus:ring-2 focus:ring-orange/30" aria-describedby="error-insurance">
+                <option value="">Selecciona una opcion</option>
+                <option value="basico">Basico</option>
+                <option value="premium">Premium</option>
+                <option value="sin-seguro">Sin seguro</option>
+              </select>
+              <p id="error-insurance" class="mt-2 text-sm text-red-300" role="alert" aria-live="polite"></p>
+            </div>
+            <div class="sm:col-span-2">
+              <label for="notes" class="block text-sm font-medium mb-2">Observaciones</label>
+              <textarea id="notes" name="notes" rows="4" maxlength="500" placeholder="Horarios preferidos, referencias o requisitos de entrega" class="w-full rounded-xl border border-sky/30 bg-navy/70 px-4 py-3 outline-none focus:border-orange focus:ring-2 focus:ring-orange/30" aria-describedby="error-notes"></textarea>
+              <p id="error-notes" class="mt-2 text-sm text-red-300" role="alert" aria-live="polite"></p>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="inline-flex items-start gap-3 text-sm text-sky" for="privacy">
+                <input id="privacy" name="privacy" type="checkbox" required class="mt-1 h-4 w-4 rounded border-sky/40 bg-navy/70 text-orange focus:ring-orange" aria-describedby="error-privacy">
+                <span>Acepto la politica de privacidad y el tratamiento de datos para recibir el presupuesto *</span>
+              </label>
+              <p id="error-privacy" class="mt-2 text-sm text-red-300" role="alert" aria-live="polite"></p>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="flex flex-wrap gap-3">
+          <button type="submit" class="inline-flex items-center rounded-full bg-orange px-6 py-3 text-sm font-semibold text-white hover:bg-orange/90">Enviar solicitud</button>
+          <button type="reset" class="inline-flex items-center rounded-full border border-sky/40 px-6 py-3 text-sm font-medium text-sky hover:text-white hover:border-white/60">Limpiar formulario</button>
+        </div>
+
+        <p id="formStatus" class="rounded-xl border border-sky/30 bg-navy/60 px-4 py-3 text-sm text-sky" role="status" aria-live="polite">Completa los campos para validar y generar tu solicitud.</p>
+      </form>
+    </section>
+  </main>
+
+  <script src="validation.js" defer></script>
+</body>
+</html>
