@@ -2,8 +2,8 @@ Nombre de la empresa: TrackFlow
 
 Sector: Mensajeria y envio de paquetes
 
-
-# Requisitos de la Landing Page (index.html)
+# HITO 2
+## Requisitos de la Landing Page (index.html)
 Estructura base: Crear index.html con HTML5 semántico.
 
 -Ejecución: Proyecto ejecutable localmente con comando npx (compatible con Codespaces).
@@ -158,3 +158,65 @@ No solo movemos paquetes, movemos confianza.
 
 > "Lo que más valoro es la claridad en los precios. Es difícil encontrar una empresa de transporte que sea tan honesta con sus tarifas desde el primer momento."
 > — **Elena R.**, Cliente particular.
+
+
+# HITO 3
+
+## PROMPT
+
+Actúa como un desarrollador junior en Next.js (App Router) y React. Necesito crear una aplicación de gestión de candidaturas conectada a una API externa. Genera el código estructurado, limpio y utilizando async/await para todas las peticiones.
+
+Cumple estrictamente con los siguientes requisitos divididos por secciones:
+
+1. VISTAS Y NAVEGACIÓN (Rutas de Next.js):
+- Página de inicio (/) que cargue el listado mediante GET /records.
+- Página de detalle (/candidates/[id]) que cargue los datos mediante GET /records/:id.
+- La navegación entre ambas debe ser fluida y sin recargas de página completas.
+
+2. LISTADO DE CANDIDATURAS (/):
+- Mostrar de cada candidato: nombre completo, puesto, estado actual y etapa actual.
+- Implementar filtros por 'estado' y por 'etapa' usando URL query parameters con `useSearchParams`.
+- Añadir un campo de búsqueda en tiempo real que filtre por nombre o email (sin recargar).
+- Controlar los estados asíncronos: mostrar un spinner/estado de carga y un mensaje de error amigable si falla la API.
+
+3. DETALLE DE CANDIDATURA (/candidates/[id]):
+- Mostrar toda la info: nombre, email, teléfono, puesto, LinkedIn, enlace al CV, años de experiencia, estado, etapa y fecha de aplicación.
+- Añadir controles interactivos para actualizar el estado y la etapa individualmente usando PATCH /records/:id.
+- Mostrar una sección de notas obtenidas con GET /records/:id/notes.
+- Permitir añadir nuevas notas (POST /records/:id/notes) y eliminar notas existentes (DELETE /records/:id/notes/:note_id).
+
+4. GESTIÓN Y FORMULARIOS:
+- Crear un formulario para registrar una nueva candidatura (POST /records).
+- Crear un formulario para editar los datos actuales de una candidatura (PUT /records/:id).
+- Ambos formularios deben incluir validación de campos requeridos antes de enviarse y mostrar feedback visual claro (éxito o error) tras el envío.
+
+Por favor, sepárame el código por componentes o archivos explicándome dónde debe ir cada uno dentro de la estructura de carpetas /app de Next.js.
+
+
+### VARIABLES DE LA API
+Para ayudarte a generar el código con las variables correctas de la API, aquí tienes un ejemplo real del objeto JSON que devuelve el servidor para un candidato:
+
+{
+  "id": "53f2bbdc-4ea0-4b34-b076-4f8e7c2736ac",
+  "full_name": "Michael Smith",
+  "email": "michael.smith@gmail.com",
+  "phone": "+1 423-828-6619",
+  "position": "Jefa/e de Gabinete",
+  "linkedin_url": "https://linkedin.com/in/michael-smith",
+  "cv_url": "https://storage.example.com/cv/...pdf",
+  "status": "in_progress",
+  "stage": "review",
+  "experience_years": 6,
+  "applied_at": "2026-02-28T20:04:32.114Z",
+  "updated_at": "2026-03-27T20:04:32.114Z",
+  "notes": [
+    {
+      "id": "dbb20683-26c4-4d30-8a25-0f85e496927a",
+      "record_id": "53f2bbdc-4ea0-4b34-b076-4f8e7c2736ac",
+      "content": "Experiencia algo corta pero la formación es sólida...",
+      "created_at": "2026-03-25T20:04:32.114Z"
+    }
+  ]
+}
+
+Por favor, asegúrate de que al mapear los datos en el listado y en la vista de detalle utilices exactamente estas propiedades (como 'full_name', 'experience_years', 'linkedin_url', etc.) y que manejes correctamente el array de 'notes' para mostrarlas en el detalle.
