@@ -100,7 +100,7 @@ export function CandidateForm({ mode, candidateId }: { mode: Mode; candidateId?:
         const created = await createRecord(form);
         setSuccess("Candidatura creada con éxito.");
         setForm(INITIAL_FORM);
-        router.push(`/candidates/${created.id}`);
+        router.push(`/candidates/${created.id}?created=1`);
       } else if (candidateId) {
         await updateRecord(candidateId, form);
         setSuccess("Candidatura actualizada con éxito.");

@@ -22,7 +22,13 @@ const STAGE_OPTIONS: CandidateStage[] = [
   "rejected",
 ];
 
-export function CandidateDetailPage({ id }: { id: string }) {
+export function CandidateDetailPage({
+  id,
+  isCreated = false,
+}: {
+  id: string;
+  isCreated?: boolean;
+}) {
   const [candidate, setCandidate] = useState<CandidateRecord | null>(null);
   const [notes, setNotes] = useState<CandidateNote[]>([]);
   const [loading, setLoading] = useState(true);
@@ -155,6 +161,12 @@ export function CandidateDetailPage({ id }: { id: string }) {
 
   return (
     <main className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-6 px-4 py-8 sm:px-6">
+      {isCreated && (
+        <p className="rounded-md border border-green-200 bg-green-50 p-3 text-sm text-green-700">
+          Candidatura creada con éxito.
+        </p>
+      )}
+
       <header className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 className="text-2xl font-semibold text-[#003049]">{candidate.full_name}</h1>
